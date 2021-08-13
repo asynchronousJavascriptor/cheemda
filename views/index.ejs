@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+
+<body>
+  <div id="btmmenu">
+    <i class="ri-close-line"></i>
+    <div id="left">
+      <div class="row">
+        <h4>2</h4>
+        <h4>X</h4>
+        <h4>Aloo Paratha</h4>
+      </div>
+      <div class="row">
+        <h4>5</h4>
+        <h4>X</h4>
+        <h4>Masala pav</h4>
+      </div>
+      <div class="row">
+        <h4>5</h4>
+        <h4>X</h4>
+        <h4>Masala pav</h4>
+      </div>
+      <div class="row">
+        <h4>5</h4>
+        <h4>X</h4>
+        <h4>Masala pav</h4>
+      </div>
+    </div>
+    <div id="right">
+      <button>
+        <h3>₹ 320</h3>
+        <h3>Place Order</h3>
+      </button>
+    </div>
+  </div>
+  <div id="main">
+    <div id="heading">
+      <h1>Cheems <span>Food</span></h1>
+      <span id="badge">super faaaast</span>
+    </div>
+    <h1>Search Food Options</h1>
+    <input type="text" placeholder="Masala Pav, Full Meal, French Fries, ... ">
+    <div id="items">
+      <% products.forEach(function(data){ %>
+        <div class="item">
+          <div class="imgsection">
+            <div class="img">
+              <img src=<%=data.image %>
+              alt="">
+            </div>
+            <div class="imgchild">
+              <img src=<%=data.image %>
+              alt="">
+            </div>
+          </div>
+          <h3>
+            <%= data.name %>
+          </h3>
+          <h5>
+            <%= data.description %>
+          </h5>
+          <h1>₹ <%= data.price %>
+          </h1>
+          <div data-product=<%= data.name.split(' ').join('-') %> class="add">
+            <i class="ri-add-line"></i>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+  </div>
+</body>
+
+</html>
